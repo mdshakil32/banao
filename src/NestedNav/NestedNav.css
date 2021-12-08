@@ -1,0 +1,108 @@
+.nested-nav-wrapper {
+  max-width: 1040px;
+}
+.nested-nav {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-link {
+  color: black;
+  font-size: 16px;
+  /* line-height: 20.8px; */
+  margin-bottom: -1px;
+  color: #8a8a8a;
+  padding-bottom: 20px;
+}
+.nav-link:hover {
+  color: #8a8a8a;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: rgb(0, 0, 0);
+  background-color: white;
+  border-bottom: 1px solid #000000;
+  border-radius: 0;
+}
+.write-post-btn {
+  background-color: #edeef0 !important;
+  color: black;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  border: none;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.join-grp-btn {
+  background-color: #2f6ce5 !important;
+  padding: 8px 12px;
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  margin-bottom: 12px;
+}
+.join-icon {
+  width: 22px;
+  height: 11.92px;
+  margin-top: -5px !important;
+  margin-right: 6px;
+}
+
+.nested-nav-sm {
+  display: none;
+}
+.nested-nav-post {
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 13px;
+}
+/* navigation dropdown  */
+.nested-nav-dropdown {
+  background-color: #f2f2f2;
+  color: #2e2e2e;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+}
+.nested-nav-dropdown:hover {
+  background-color: #f2f2f2;
+  color: #2e2e2e;
+}
+
+.btn-check:active + .nested-nav-dropdown,
+.btn-check:checked + .nested-nav-dropdown,
+.nested-nav-dropdown.active,
+.nested-nav-dropdown:active,
+.show > .nested-nav-dropdown.btn-success.dropdown-toggle {
+  background-color: #f2f2f2;
+  color: #2e2e2e;
+  border-color: none;
+}
+
+.btn-check:focus + .nested-nav-dropdown,
+.nested-nav-dropdown:focus {
+  background-color: #f2f2f2;
+  color: #2e2e2e;
+  border-color: none;
+  box-shadow: 0 0 0 0.25rem #c9c9c9;
+}
+
+.btn-check:active + .nested-nav-dropdown:focus,
+.btn-check:checked + .nested-nav-dropdown:focus,
+.nested-nav-dropdown.active:focus,
+.nested-nav-dropdown:active:focus,
+.show > .nested-nav-dropdown.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem #c9c9c9;
+}
+
+@media only screen and (max-width: 768px) {
+  .nested-nav-sm {
+    display: block;
+  }
+  .nested-nav-wrapper {
+    display: none;
+  }
+}
