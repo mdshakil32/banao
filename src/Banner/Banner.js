@@ -9,6 +9,9 @@ const Banner = () => {
 
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
+    const [isLogin, setisLogin] = useState(false);
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
 
     const handleCloseLogin = () => setShowLogin(false);
     const handleShowLogin = () =>setShowLogin(true) ;
@@ -26,13 +29,51 @@ const Banner = () => {
         setShowLogin(true);
     } 
 
+     // input email 
+    const loginEmail =(e)=>{
+        setEmail(e.target.value);
+    }
+    // input pass 
+    const loginPass =(e)=>{
+        setPass(e.target.value);
+    }
+
+    // log in 
+    const handleLogin =()=>{
+
+        if( email=="goyal@mail.com" && pass=="123456" ){
+            setisLogin(true);
+            setShowLogin(false);
+        }
+        console.log("login please",isLogin,email,pass);  
+    }
+
+    // log in 
+    const handleLogout =()=>{
+            
+            var answer = window.confirm("Confirm your Leave");
+            if (answer) {
+                setisLogin(false);
+            }
+        
+    }
+
     return (
         <div className="banner">
                 <Container className="banner-wrapper">
                     <div className="banner-text">
                         <Col className="d-flex justify-content-between align-items-center banner-arrow-btn p-3">
                           <img className="banner-arrow" src={arrowBack} alt="" />
-                          <button onClick={handleShowLogin} className="banner-btn">Join Group</button>
+
+                          {
+                              !isLogin ? <button onClick={handleShowLogin} className="banner-btn">Join Group</button>:
+                              <button onClick={handleLogout} className="banner-btn">Leave Group</button>
+                          }
+
+                          
+
+                          
+
                         </Col>
 
                         <h1 >Computer Engineering</h1>
@@ -54,16 +95,18 @@ const Banner = () => {
 
             {/* form   */}
             <Form>
-            <Form.Control className='rounded-0' type="email" placeholder="Email" />
-            <Form.Control className='rounded-0' type="password" placeholder="Password" />
+            <Form.Control onChange={loginEmail} className='rounded-0' type="email" placeholder="Email" />
+            <Form.Control onChange={loginPass} className='rounded-0' type="password" placeholder="Password" />
             
-            <Col className=" my-4 d-flex justify-content-between align-items-center ">
-                <Button className="rounded-pill  form-btn" variant="primary" type="submit">
+           
+            </Form>
+
+             <Col className=" my-4 d-flex justify-content-between align-items-center ">
+                <Button onClick={handleLogin} className="rounded-pill  form-btn" variant="primary" type="submit">
                     Create Account
                 </Button>
                 <p onClick={goToRegister} className="toggle-link" >or, Create Account</p> 
             </Col>
-            </Form>
 
             {/* fb button  */}
             <Button className="fb-btn w-100" variant="outline-secondary">

@@ -8,6 +8,7 @@ import guluguluIcon from '../assets/gulugulu.png';
 import febuIcon from '../assets/febu.png';
 import rectangleIcon from '../assets/Rectangle.png';
 import loginBanner from '../assets/login-banner.png';
+import userIcon from "../assets/post3.png";
 import { Alert, Button, Col, Container, Dropdown, Form, FormControl, Modal, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
 
 
@@ -15,8 +16,9 @@ const Navigation = () => {
 
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
-
-    const [modalShow, setModalShow] = React.useState(false);
+    const [isLogin, setisLogin] = useState(false);
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
 
     const handleCloseLogin = () => setShowLogin(false);
     const handleShowLogin = () =>setShowLogin(true) ;
@@ -34,6 +36,33 @@ const Navigation = () => {
         setShowLogin(true);
     } 
 
+    // input email 
+    const loginEmail =(e)=>{
+        setEmail(e.target.value);
+    }
+    // input pass 
+    const loginPass =(e)=>{
+        setPass(e.target.value);
+    }
+
+    // log in 
+    const handleLogin =()=>{
+
+        if( email=="goyal@mail.com" && pass=="123456" ){
+            setisLogin(true);
+            setShowLogin(false);
+        }
+        console.log("login please",isLogin,email,pass);  
+    }
+
+    // log in 
+    const handleLogout =()=>{
+            setisLogin(false);
+        
+    }
+
+
+ console.log(isLogin);
     return (
 
 
@@ -61,8 +90,10 @@ const Navigation = () => {
                 </Col>
 
                 <Col md={4}>
-                    {/* <p className="float-end">register please</p> */}
-                    <Dropdown className="float-end">
+
+                    {/* not login  */}
+                    {
+                        !isLogin? <Dropdown className="float-end">
                     <Dropdown.Toggle className="nav-dropdown-btn" variant="success" id="dropdown-basic">
                         Create account.<span className="text-primary"> It's free!</span>
                     </Dropdown.Toggle>
@@ -73,9 +104,21 @@ const Navigation = () => {
                         <Dropdown.Item onClick={handleShowRegister} >Register</Dropdown.Item>
                         
 
-                        <Dropdown.Item onClick={() => setModalShow(true)} >Something else</Dropdown.Item>
+                        <Dropdown.Item  >Something else</Dropdown.Item>
+                    </Dropdown.Menu>
+                    </Dropdown> :
+                    
+                    <Dropdown className="float-end">
+                    <Dropdown.Toggle className="nav-dropdown-btn" variant="success" id="dropdown-basic">
+                        <img className='me-2' src={userIcon} alt="" />
+                        Siddharth Goyal
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item onClick={handleLogout} >Logout</Dropdown.Item>
                     </Dropdown.Menu>
                     </Dropdown>
+                    }
                     
                 </Col>
 
@@ -103,18 +146,18 @@ const Navigation = () => {
                 <Col md={6}>
                     
                     {/* form   */}
-                    <Form>
-                    <Form.Control className='rounded-0' type="email" placeholder="Email" />
-                    <Form.Control className='rounded-0' type="password" placeholder="Password" />
-                    
-                        <Button className="w-100 my-4 rounded-pill  form-btn" variant="primary" type="submit">
-                            Login
-                        </Button>
+                    <Form >
+                    <Form.Control onChange={loginEmail} className='rounded-0' type="email" placeholder="Email" />
+                    <Form.Control onChange={loginPass} className='rounded-0' type="password" placeholder="Password" />
                         
                     </Form>
 
+                    <Button onClick={handleLogin} className="w-100 my-4 rounded-pill  form-btn" variant="primary" type="submit">
+                            Login
+                        </Button>
+
                     {/* fb button  */}
-                    <Button className="fb-btn w-100" variant="outline-secondary">
+                    <Button  className="fb-btn w-100" variant="outline-secondary">
                         <img src={febuIcon} alt="" />
                         Sign up with Facebook
                     </Button>
