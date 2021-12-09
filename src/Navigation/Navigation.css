@@ -67,6 +67,62 @@
   box-shadow: 0 0 0 0.25rem #c9c9c9;
 }
 
+.form-btn {
+  font-size: 13px;
+  padding: 10px 28px;
+}
+.modal-title-lg {
+  font-weight: bold;
+  font-size: 24px;
+}
+.toggle-link-lg {
+  color: #495057;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.toggle-link {
+  color: #495057;
+  text-decoration: underline #495057;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.fb-btn,
+.gulugulu-btn {
+  font-size: 13px;
+  color: black;
+  padding: 10px 0;
+  border: 0.6px solid #d9d9db;
+  margin-bottom: 12px;
+}
+.fb-btn img,
+.gulugulu-btn img {
+  margin-right: 10px;
+  margin-bottom: 2px;
+  height: 16px;
+  width: 16px;
+}
+.register-footer {
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.custom-modal-header {
+  background-color: #effff4;
+  color: #008a45;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.modal-right-footer-lg {
+  font-size: 11px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 768px) {
   .navigation-container-lg {
     display: none;

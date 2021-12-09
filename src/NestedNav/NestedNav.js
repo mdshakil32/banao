@@ -37,12 +37,12 @@ const NestedNav = () => {
 
 
             <Container className="nested-nav-wrapper mt-5 mb-3" >
-                <Row className="nested-nav gx-1 ">
+                <Row className="nested-nav  ">
                     <Col md={7} className=" ps-0">
 
-                    <Nav variant="pills" defaultActiveKey="/home">
+                    <Nav variant="pills" defaultActiveKey="/">
                         <Nav.Item >
-                            <Nav.Link href="/home">All Post(32)</Nav.Link>
+                            <Nav.Link href="/">All Post(32)</Nav.Link>
                         </Nav.Item>
 
                         <Nav.Item >
